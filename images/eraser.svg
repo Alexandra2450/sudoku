@@ -1,0 +1,17 @@
+<svg width="60" height="60" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Линии, имитирующие текст -->
+  <path d="M4 28 H44 M4 34 H44" stroke="#A0A0A0" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- "Стертый" след за ластиком (белый прямоугольник без обводки, который перекрывает текст) -->
+  <rect x="24" y="25" width="20" height="12" fill="white"/>
+
+  <!-- Сам ластик -->
+  <path 
+    d="M8 18 L24 10 L40 18 L24 26 Z" 
+    fill="white" 
+    stroke="black" 
+    stroke-width="2" 
+    stroke-linejoin="round" 
+    stroke-linecap="round"
+  />
+</svg>
