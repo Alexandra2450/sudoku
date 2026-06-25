@@ -282,12 +282,17 @@
             const numBlock = $(this).attr("data-block");
             const indX = $(this).attr("data-i");
             const indY = $(this).attr("data-j");
+            const curText = $(this).text();
+            console.log(curText);
             $(".container-sudoku-block-item").removeClass("block-highlight");
             $(".container-sudoku-block-item").removeClass("current-cell-highlight");
             $(".container-sudoku-block-item[data-block='" + numBlock + "']").addClass("block-highlight");
             $(".container-sudoku-block-item[data-i='" + indX + "']").addClass("block-highlight");
             $(".container-sudoku-block-item[data-j='" + indY + "']").addClass("block-highlight");
             $(".container-sudoku-block-item[data-i='" + indX + "'][data-j='" + indY + "']").addClass("current-cell-highlight");
+            if(curText != ""){
+                $(".container-sudoku-block-item:contains('" + curText + "')").addClass("current-text-hightlight")
+            }
             if($(this).attr("data-const") == 1){
                 selectCell = [indX, indY, false];
             }
@@ -704,6 +709,10 @@
 
                 .header {
                     width: auto;
+                }
+
+                .current-text-hightlight {
+                    background-color: #de888e;
                 }
 
         
