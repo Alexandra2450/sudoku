@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <!-- Иконка для вкладки браузера (favicon). Поместите файл иконки в папку images -->
+    <link rel="icon" type="image/png" href="images/label3.png">
+</head>
+<body>
+    <div class="header">
+        <img src="images/setting.svg" class="setting-icon">
+        <div class="section-button">
+            <div class="start-game-button">НОВАЯ ИГРА</div>
+        </div>
+    </div>
+    <div class="section-levels">
+        <div class="section-levels-title">Уровни сложности:</div>
+        <div class="section-levels-item">Тишина</div>
+        <div class="section-levels-item">Пробуждение</div>
+        <div class="section-levels-item">Просвещение</div>
+    </div>
+    <div class="section">
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+        <div class="container-sudoku-block">
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+            <div class="container-sudoku-block-item"></div>
+        </div>
+
+    </div>
+    <div class="section-number-collection">
+        <div class="selection-number">1</div>
+        <div class="selection-number">2</div>
+        <div class="selection-number">3</div>
+        <div class="selection-number">4</div>
+        <div class="selection-number">5</div>
+        <div class="selection-number">6</div>
+        <div class="selection-number">7</div>
+        <div class="selection-number">8</div>
+        <div class="selection-number">9</div>
+    </div>    
+
+
+    
+
+
+
+
+
+
+
+
+    <script>  
+
+        let levels = {
+            easy: [
+                2344234253453454, 3423433453453, 3453453453453
+            ],
+            medium: [],
+            hard: []
+        }
+
+        let selectCell = [0, 0, false];  
+        let indstr = 0, indcol = 0; numBlock = 0;
+        $(".container-sudoku-block-item").each(function(index) {
+            $(this).attr("data-i", indstr);
+            $(this).attr("data-j", indcol);
+            $(this).attr("data-block", numBlock);
+            indcol++;
+            if(indcol % 3 == 0) {
+                indcol = indcol - 3;
+                indstr++;
+            }
+            if(indcol % 3 == 0 && indstr % 3 == 0){
+                numBlock++;
+                indstr = Math.floor(numBlock / 3) * 3;
+                indcol = Math.floor(numBlock % 3) * 3;
+            }   
+        });
+
+        let matrSudoku = [];
+        for(let i = 0; i < 9; i++) {
+            matrSudoku[i] = [];
+            for(let j = 0; j < 9; j++) {
+                matrSudoku[i][j] = 0;
+            }
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function generateField(n){
+            let startField = [];
+            for(let i = 0; i < n; i++){
+                flag = false;
+                let curInd = 0;
+                while(flag==false){
+                    curInd = getRandomInt(81);
+                    if(startField.includes(curInd) == false){
+                        flag = true;
+                        startField.push(curInd)
+                    }
+                }
+            }
+            return startField;
+        }
+
+        
+
+        function checkRow(num, indX, indY){
+            let flag = true;
+            for(let i=0; i<9; i++){
+                if(matrSudoku[indX][i] == num){
+                    flag = false;
+                }
+            }
+            return flag;
+        }
+
+        function checkCol(num, indX, indY){
+            let flag = true;
+            for(let i=0; i<9; i++){
+                if(matrSudoku[i][indY] == num){
+                    flag = false;
+                }
+            }
+            return flag;
+        }
+
+        function checkBlock(num, indX, indY){
+            let flag = true;
+            let checkBlock = $(".container-sudoku-block-item[data-i='" + indX + "'][data-j='" + indY + "']").attr("data-block");
+            for(let i = 0; i < 9; i++) {
+                for(let j = 0; j < 9; j++) {
+                    let curBlock = $(".container-sudoku-block-item[data-i='" + i + "'][data-j='" + j + "']").attr("data-block");
+                    if(curBlock == checkBlock && matrSudoku[i][j] == num){
+                        flag = false;
+                    }
+                }
+            }
+            return flag;
+        }
+
+        function generateArrayTrue(){
+            for(let i = 0; i < 9; i++) {
+                for(let j = 0; j < 9; j++) {
+                    let flag = false;
+                    for(let k = 1; k < 500; k++){
+                        if(flag == true){
+                            break;
+                        }
+                        let num = getRandomInt(9) + 1;
+                        if(checkRow(num, i, j) && checkCol(num, i, j) && checkBlock(num, i, j)){
+                            matrSudoku[i][j] = num;
+                            flag = true;
+                        }
+                    }
+                    if(matrSudoku[i][j] == 0){
+                        return false;
+                    }
+   
+                }
+            }
+            return true;
+        }
+        
+        for(let i = 0; i < 1000; i++){
+            let res = generateArrayTrue();
+            writeMatrixToString(matrSudoku);
+            if(res == false){
+                for(let i = 0; i < 9; i++) {
+                    for(let j = 0; j < 9; j++) {
+                        matrSudoku[i][j] = 0;
+                    }
+                }
+
+            } else {
+                break;
+            }
+        }
+
+        let generateFieldInd = generateField(25);
+        for(let i = 0; i < generateFieldInd.length; i++){
+            let curi = Math.floor(generateFieldInd[i] / 9);
+            let curj = generateFieldInd[i] % 9;
+            //$(".container-sudoku-block-item[data-i='" + curi + "'][data-j='" + curj + "']").addClass("podsvetka").text(matrSudoku[curi][curj]);
+            $(".container-sudoku-block-item[data-i='" + curi + "'][data-j='" + curj + "']").text(matrSudoku[curi][curj]).attr("data-const", 1);
+        }
+
+        console.log(generateFieldInd);
+        console.log(matrSudoku);
+
+        $(".container-sudoku-block-item").on("click", function(){
+            const numBlock = $(this).attr("data-block");
+            const indX = $(this).attr("data-i");
+            const indY = $(this).attr("data-j");
+            const curText = $(this).text();
+            console.log(curText);
+            $(".container-sudoku-block-item").removeClass("block-highlight");
+            $(".container-sudoku-block-item").removeClass("current-cell-highlight");
+            $(".container-sudoku-block-item").removeClass("current-text-hightlight");
+            $(".container-sudoku-block-item[data-block='" + numBlock + "']").addClass("block-highlight");
+            $(".container-sudoku-block-item[data-i='" + indX + "']").addClass("block-highlight");
+            $(".container-sudoku-block-item[data-j='" + indY + "']").addClass("block-highlight");
+            $(".container-sudoku-block-item[data-i='" + indX + "'][data-j='" + indY + "']").addClass("current-cell-highlight");
+            if(curText != ""){
+                $(".container-sudoku-block-item:contains('" + curText + "')").addClass("current-text-hightlight")
+            }
+            if($(this).attr("data-const") == 1){
+                selectCell = [indX, indY, false];
+            }
+            else{
+                selectCell = [indX, indY, true];
+            }
+        });
+
+        $(".start-game-button").on("click", function(){
+            window.location.reload();
+        });
+
+        $(".selection-number").on("click", function(){
+            let num = $(this).text();
+            console.log(num);
+            if(selectCell[2] == true){
+                if(num == matrSudoku[selectCell[0]][selectCell[1]]){
+                    $(".container-sudoku-block-item[data-i='" + selectCell[0] + "'][data-j='" + selectCell[1] + "']").text(num).removeClass("red-flag").addClass("green-flag").attr("data-const", 1);
+                    selectCell = [0, 0, false];
+                } else {
+                    $(".container-sudoku-block-item[data-i='" + selectCell[0] + "'][data-j='" + selectCell[1] + "']").text(num).removeClass("green-flag").addClass("red-flag");
+                }
+            }
+        });
+
+        // Запускаем музыку при первом клике пользователя на странице
+        $(document).one("click", function() {
+            const music = document.getElementById("background-music");
+            music.play().catch(e => console.error("Не удалось воспроизвести музыку:", e));
+        });
+
+        
+
+        function writeMatrixToString(matrSudoku) {
+            let str = "";
+            for(let i = 0; i < 9; i++) {
+                for(let j = 0; j < 9; j++) {
+                    str += matrSudoku[i][j];
+                }
+            }
+            console.log(str);
+            return str;
+        }
+
+        
+
+
+
+    
+    
+    </script>
+
+
+    <style>
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url('images/background1.jpg'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center center; 
+            background-attachment: fixed; 
+        }
+
+        .section {
+            border: 2px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            width: 456px;
+            height: 456px;
+            background-color: white;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto 0;
+            
+
+        }
+
+        .container-sudoku-block {
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid black;
+            height: 152px;
+            flex: 0 0 152px;
+            box-sizing: border-box;
+        }
+
+        .container-sudoku-block-item {
+            flex: 0 0 50px;
+            height: 50px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px; 
+            font-family: "Caveat", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .podsvetka{
+            background: #f1e945c2;
+        }
+
+        .block-highlight {
+            background-color: #ffc0c4; 
+        }
+
+        .current-cell-highlight {
+            border: 4px solid black;
+        }
+
+        .section-button {
+            text-align: center; 
+        }
+
+        .start-game-button {
+            padding: 12px 25px;
+            font-size: 27px;
+            font-family: "Caveat", cursive;
+            font-weight: 700;
+            color: black;
+            background-color: rgb(242, 190, 190); 
+            border: 7px solid #ff6b78;
+            border-radius: 8px;
+            cursor: pointer;
+            
+        }
+
+        .start-game-button:hover {
+            background-color: #f78a939d;
+        }
+
+        .start-game-button:active {
+            background-color: #e62d3caf;
+        }
+
+        .section-number-collection{
+            gap: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px; 
+            font-family: "Caveat", cursive;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+
+        .selection-number {
+            width: 45px;
+            height: 45px;
+            border: 2px solid black;
+            box-sizing: border-box;
+            background: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            cursor: pointer;
+        }
+
+        .green-flag {
+            animation: greenColor 2s linear 1;
+        }
+
+        @keyframes greenColor {
+            0% {
+                color: green;
+            }
+            100% {
+                color: black;
+            }
+        }
+
+        .red-flag {
+            color: red;
+        }
+
+        .volume-control-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .volume-icon {
+            font-size: 24px;
+        }
+
+        #volume-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 150px;
+            height: 8px;
+            background: #f2bebe;
+            outline: none;
+            border: 2px solid #ff6b78;
+            border-radius: 5px;
+        }
+
+        #volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ff6b78;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .header {
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-between;
+            width: 300px;
+            gap: 20px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .setting-icon:hover {
+            filter: brightness(0.6);
+            animation: rotation 2s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(359deg);
+            }
+        }
+
+        .section-levels {
+            display: flex;
+            justify-content: center;
+            font-size: 27px; 
+            font-family: "Caveat", cursive;
+            font-weight: 400;
+            font-style: normal;
+            margin-top: 20px;
+            gap: 20px;
+ 
+
+        }
+
+        .section-levels-title {
+
+
+        }
+
+        .current-text-hightlight {
+            background-color: #de888e;
+        }
+
+
+    </style>
+
+    <!-- Элемент для фоновой музыки. Замените 'background-music.mp3' на имя вашего файла -->
+    <audio src="music/backgroundMusic4.mp3" autoplay loop></audio>
+    <!--<audio src="music/backgroundMusic4.mp3" autoplay loop></audio> -->
+    <audio id="background-music" src="music/backgroundMusic4.mp3" loop></audio>
+
+</body>
+</html>
